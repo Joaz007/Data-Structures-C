@@ -5,35 +5,36 @@
 typedef struct {
     char name[30];
     float grade[4]; 
-} Alunos;
+} Aluno;
 
-void Print_Student(Alunos Aluno){
+void Print_Student(Aluno Alunos){
 
-    printf("Name: %s \n",Aluno.name);
+    printf("Name: %s \n",Alunos.name);
     printf("Grades:");
     for (int i = 0; i < 4; i++){
-        printf("%.2f ", Aluno.grade[i]);
+        printf("%.2f ", Alunos.grade[i]);
     }
-    printf("\n");
+
+    printf("\n ");
         
     return;
 }
 
-//broxa do CARALHO
 int main(){
-    Alunos Aluno;
+    Aluno Alunos;
 
     printf("Type the  name of the student:\n");
-    fgets(Aluno.name, sizeof(Aluno.name), stdin);
-    Aluno.name[strcspn(Aluno.name, "\n")] = 0;
+    fgets(Alunos.name, sizeof(Alunos.name), stdin);
+    Alunos.name[strcspn(Alunos.name, "\n")] = 0;
 
     for (int i = 0; i < 4; i++){
     printf("Type the Grade[%i]: \n", i+1);
-    scanf("%f", &Aluno.grade[i]);
+    scanf("%f", &Alunos.grade[i]);
     setbuf(stdin ,NULL);
     }
 
-    Print_Student(Aluno);
+
+    Print_Student(Alunos);
     
     return 0;
 }
